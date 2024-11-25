@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+  <div class="info-container">
+    <div class="score-container">
+      <p id="score">0</p>
+      <select onchange="changeSpeed(value)">
+        <option value="2">easy</option>
+        <option value="4" selected>normal</option>
+        <option value="7">hard</option>
+        <option value="10">very-hard</option>
+      </select>
+    </div>
+    <div class="action">
+      <div class="ciccle"><i class="fa-solid fa-rotate-left" onclick="restart()"></i></div>
+      <div class="ciccle"><i onclick="playPause()" id="pauseButton" class="fa-solid fa-pause"></i></div>
+      <div class="ciccle"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+  
+  <div class="game-container">
+    <canvas id="playground"></canvas>
+    <div class="control-container">
+      <div onclick="control('Left')" class="arrow"><i class="fas fa-arrow-left"></i></div>
+      <div onclick="control('Up')" class="arrow"><i class="fas fa-arrow-up"></i></div>
+      <div onclick="control('Down')" class="arrow"><i class="fas fa-arrow-down"></i></div>
+      <div onclick="control('Right')" class="arrow"><i class="fas fa-arrow-right"></i></div>
+    </div>
+  </div>
+  
+  <div id="pop" popover="auto">
+    <p>game over!! your scores :</p>
+    <h2 id="score2">0</h2>
+    <button popoverTarget="pop" popoverTargetAction="hide">Close</button>
+  </div>
+  
+    
+    <script src="script.js"></script>
+</body>
+</html>
